@@ -34,6 +34,16 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors({
     origin: process.env.CLIENT_URL ,     // client URL
+    methods: [
+        'GET',
+        'POST',
+        'PUT',
+        'DELETE'
+      ],
+    
+      allowedHeaders: [
+        'Content-Type',
+      ],
     credentials: true
 }))
 app.use(session(sessionOptions))
