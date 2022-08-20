@@ -69,8 +69,10 @@ app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/payment', paymentRoutes)
 
-app.listen(8000, (req, res)=>{
-    console.log('Server listening at port 8000...');
+const port = process.env.PORT || 8000
+
+app.listen(port, (req, res)=>{
+    console.log(`Server listening at ${port} 8000...`);
 })
 /** Error Handling Middleware */
 app.use((err, req, res, next)=>{
